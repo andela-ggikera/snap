@@ -23,7 +23,7 @@ class LoginForm(Form):
 @users.route('/login', methods=['GET', 'POST'])
 def login():
     """User login functionality."""
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         return redirect(url_for('snaps.listing'))
     form = LoginForm()
     if form.validate_on_submit():
